@@ -1,9 +1,10 @@
 # https://3dprintbeginner.com/3d-printer-farm-with-octoprint-and-docker/
 
 version: '3.9'
- services: 
- Octoprint
- octoprint1:
+
+services: 
+#### Octoprint
+  octoprint1:
       container_name: Octoprint1
       image: octoprint/octoprint
       hostname: Octoprint1
@@ -17,12 +18,12 @@ version: '3.9'
         - ENABLE_MJPG_STREAMER=true
         - MJPG_STREAMER_INPUT=-n -d /dev/video0:/dev/video0 -r 1280x720 -f 30
       devices:
-      #Printer Port
+        #Printer Port
         - /dev/ttyACM0:/dev/ttyACM0
-      #Webcam port
-      #  - /dev/video0:/dev/video0
-  #####Octoprint2
-   octoprint2:
+        # Webcam port
+        #- /dev/video0:/dev/video0
+#### Octoprint2
+  octoprint2:
       container_name: Octoprint2
       image: octoprint/octoprint
       hostname: Octoprint2
@@ -36,7 +37,7 @@ version: '3.9'
         - ENABLE_MJPG_STREAMER=true 
         - MJPG_STREAMER_INPUT=-n -d /dev/video0:/dev/video1 -r 1280x720 -f 30
       devices:
-      #Printer Port
+        #Printer Port
         - /dev/ttyACM0:/dev/ttyACM1
-      #Webcam port
-      # - /dev/video0:/dev/video1
+        #Webcam port
+        #- /dev/video0:/dev/video1
