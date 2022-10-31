@@ -17,7 +17,7 @@ services:
       environment:
         - ENABLE_MJPG_STREAMER=true
         - MJPG_STREAMER_INPUT=-n -d /dev/video0:/dev/video0 -r 1280x720 -f 30
-      devices:
+      #devices:
         #Printer Port
         #- /dev/ttyACM0:/dev/ttyACM0
         # Webcam port
@@ -36,7 +36,7 @@ services:
       environment:
         - ENABLE_MJPG_STREAMER=true 
         - MJPG_STREAMER_INPUT=-n -d /dev/video0:/dev/video1 -r 1280x720 -f 30
-      devices:
+      #devices:
         #Printer Port
         #- /dev/ttyACM0:/dev/ttyACM1
         #Webcam port
