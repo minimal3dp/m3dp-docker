@@ -6,6 +6,8 @@ Install On Ubuntu Server - https://discourse.ubuntu.com/t/install-and-configure-
 
 - In step 3.1 it should be `sudo apt update`
 
+- Install docker-compose `sudo apt  install docker-compose`
+
 
 
 
