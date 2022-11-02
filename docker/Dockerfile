@@ -31,7 +31,7 @@ RUN git clone --single-branch --branch ${KIAUH_BRANCH} https://github.com/th33xi
 
 ARG USER=m3dp
 ARG HOME=/home/${USER}
-RUN useradd -d ${HOME} -ms /bin/bash ${USER}
+RUN useradd -d ${HOME} -ms /bin/bash ${USER} | chpasswd && adduser ${USER} sudo
 
 EXPOSE 80
 
