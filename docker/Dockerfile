@@ -8,6 +8,7 @@ ARG KIAUH_BRANCH="master"
 #RUN useradd -d ${HOME} -ms /bin/bash ${USER}
 
 RUN apt-get update && apt-get install -y \
+    sudo \
     git \
     locales && rm -rf /var/lib/apt/lists/* \
 	&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
