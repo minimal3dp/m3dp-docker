@@ -1,5 +1,5 @@
 
-FROM debian:bullseye-slim as image
+FROM python:3.10-slim-bullseye 
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG KIAUH_BRANCH="master"
