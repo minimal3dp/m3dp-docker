@@ -3,7 +3,7 @@
 version: '3.9'
 
 services:
-    klipper:
+    komf-e5p:
       image: m3dp/komf-stack
       build:
         dockerfile: ./docker/Dockerfile

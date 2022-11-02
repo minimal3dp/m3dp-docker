@@ -1,8 +1,10 @@
 
-FROM python:3.10-slim-bullseye as image
+FROM debian:bullseye-slim as image
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG KIAUH_BRANCH="master"
+ARG USER=m3dp
+ARG HOME=/home/${USER}
 
 RUN useradd -d ${HOME} -ms /bin/bash ${USER}
 RUN apt-get update && \
@@ -33,10 +35,6 @@ RUN apt-get update && \
 ENV LC_ALL en_US.UTF-8 
 ENV LANG en_US.UTF-8  
 ENV LANGUAGE en_US:en   
-
-ARG USER=m3dp
-ARG HOME=/home/${USER}
-
 
 ARG DEVICE_GROUP=device
 ARG DEVICE_GID=987
