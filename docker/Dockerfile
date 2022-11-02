@@ -29,5 +29,7 @@ RUN git clone --single-branch --branch ${KIAUH_BRANCH} https://github.com/th33xi
 
 #VOLUME ${HOME}
 
+USER m3dp
+
 EXPOSE 80
 
