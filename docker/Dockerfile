@@ -9,7 +9,6 @@ ARG KIAUH_BRANCH="master"
 RUN apt-get update && apt-get install -y \
     sudo \
     git \
-    stdin \
     locales && rm -rf /var/lib/apt/lists/* \
 	&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 
@@ -32,7 +31,7 @@ RUN git clone --single-branch --branch ${KIAUH_BRANCH} https://github.com/th33xi
 ARG USER=m3dp
 ARG PASSWORD=asdf1..
 ARG HOME=/home/${USER}
-RUN useradd -d ${HOME} -ms /bin/bash ${USER} && echo ${PASSWORD} | passwd ${USER} --stdin
+RUN useradd -d ${HOME} -ms /bin/bash ${USER} && echo ${PASSWORD} | passwd ${USER}
 
 EXPOSE 80
 
