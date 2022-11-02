@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu/nginx:1.18-22.04_beta
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG KIAUH_BRANCH="master"
@@ -28,5 +28,5 @@ RUN git clone --single-branch --branch ${KIAUH_BRANCH} https://github.com/th33xi
 
 VOLUME ${HOME}
 
-#EXPOSE 7125
+EXPOSE 80
 
