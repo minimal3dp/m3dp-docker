@@ -29,7 +29,9 @@ RUN git clone --single-branch --branch ${KIAUH_BRANCH} https://github.com/th33xi
 
 #VOLUME ${HOME}
 
-USER m3dp
+ARG USER=m3dp
+ARG HOME=/home/${USER}
+RUN useradd -d ${HOME} -ms /bin/bash ${USER}
 
 EXPOSE 80
 
