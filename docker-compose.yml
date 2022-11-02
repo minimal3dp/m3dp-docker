@@ -3,7 +3,7 @@
 version: '3.9'
 
 services:
-    komf-e5p:
+    e5p:
       image: m3dp/komf-stack
       build:
         dockerfile: ./docker/Dockerfile
@@ -14,7 +14,7 @@ services:
       #   - "998"
       cap_add:
         - SYS_NICE
-      container_name: komf-e5p
+      container_name: e5p
       ports:
         - 7125:7125
         - 5000:5000
