@@ -56,4 +56,4 @@ VOLUME ${HOME}
 
 #EXPOSE 7125
 
-
+CMD ["bash"]
