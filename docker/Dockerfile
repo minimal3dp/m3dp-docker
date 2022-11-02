@@ -7,8 +7,7 @@ ARG HOME=/home/${USER}
 
 RUN useradd -d ${HOME} -ms /bin/bash ${USER}
 
-RUN apt-get update && \
-    apt-get install -y \
+RUN apt-get update && apt-get install -y \
     ubuntu-server \
     bash \
     curl \
