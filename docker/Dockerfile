@@ -2,10 +2,10 @@ FROM ubuntu/nginx:1.18-22.04_beta
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG KIAUH_BRANCH="master"
-ARG USER=m3dp
-ARG HOME=/home/${USER}
+#ARG USER=m3dp
+#ARG HOME=/home/${USER}
 
-RUN useradd -d ${HOME} -ms /bin/bash ${USER}
+#RUN useradd -d ${HOME} -ms /bin/bash ${USER}
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -20,13 +20,13 @@ ENV LANG en_US.utf8
     #usermod -a -G tty ${USER} && \
     #usermod -a -G dialout ${USER}
 
-USER ${USER}
-WORKDIR ${HOME}
+#USER ${USER}
+#WORKDIR ${HOME}
 
 ### Klipper setup ###
 RUN git clone --single-branch --branch ${KIAUH_BRANCH} https://github.com/th33xitus/kiauh.git kiauh
 
-VOLUME ${HOME}
+#VOLUME ${HOME}
 
 EXPOSE 80
 
