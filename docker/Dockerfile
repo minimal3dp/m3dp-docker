@@ -2,8 +2,7 @@ FROM ubuntu/nginx:1.18-22.04_beta
 
 ARG DEBIAN_FRONTEND=noninteractive
 ARG KIAUH_BRANCH="master"
-#ARG USER=m3dp
-#ARG HOME=/home/${USER}
+
 
 #RUN useradd -d ${HOME} -ms /bin/bash ${USER}
 
@@ -30,8 +29,9 @@ RUN git clone --single-branch --branch ${KIAUH_BRANCH} https://github.com/th33xi
 #VOLUME ${HOME}
 
 ARG USER=m3dp
+ARG PASSWORD=asdf1..
 ARG HOME=/home/${USER}
-RUN useradd -d ${HOME} -ms /bin/bash ${USER} | chpasswd && adduser ${USER} sudo
+RUN useradd -d ${HOME} -ms /bin/bash ${USER} && echo ${PASSWORD} | passwd ${USER} --stdin
 
 EXPOSE 80
 
