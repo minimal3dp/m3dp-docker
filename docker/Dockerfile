@@ -41,10 +41,10 @@ ARG DEVICE_GID=987
 
 
 #RUN useradd --user-group --no-log-init --shell /bin/false -m -d ${HOME} ${USER} && \
-    groupadd -g ${DEVICE_GID} ${DEVICE_GROUP} && \
-    usermod -a -G ${DEVICE_GROUP} ${USER} && \
-    usermod -a -G tty ${USER} && \
-    usermod -a -G dialout ${USER}
+    #groupadd -g ${DEVICE_GID} ${DEVICE_GROUP} && \
+    #usermod -a -G ${DEVICE_GROUP} ${USER} && \
+    #usermod -a -G tty ${USER} && \
+    #usermod -a -G dialout ${USER}
 
 USER ${USER}
 WORKDIR ${HOME}
