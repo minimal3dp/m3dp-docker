@@ -8,14 +8,11 @@ ARG HOME=/home/${USER}
 RUN useradd -d ${HOME} -ms /bin/bash ${USER}
 
 RUN apt-get update && apt-get install -y \
-    ubuntu-server \
-    bash \
-    curl \
     git \
-    # Clean up
-    apt-get autoremove -y && \
-    apt-get clean -y && \
-    rm -rf /var/lib/apt/lists/*
+    locales && rm -rf /var/lib/apt/lists/* \
+	&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+
+ENV LANG en_US.utf8
 
 #RUN useradd --user-group --no-log-init --shell /bin/false -m -d ${HOME} ${USER} && \
     #groupadd -g ${DEVICE_GID} ${DEVICE_GROUP} && \
