@@ -33,6 +33,6 @@ ARG USER=m3dp
 ARG PASSWORD=asdf1..
 ARG HOME=/home/${USER}
 RUN useradd -d ${HOME} -ms /bin/bash ${USER}
-RUN echo "${USER}:${PASSWORD}" | chpasswd
+RUN echo "${USER}:${PASSWORD}" | chpasswd && adduser ${USER} sudo
 
 EXPOSE 80
